@@ -1,0 +1,45 @@
+<md-card>
+  <md-card-title>
+    <div class="row">
+      <div class="col-10">
+        <h1>Characters</h1>
+      </div>
+      <div class="col-2">
+        <button md-fab color="primary">
+      <md-icon>add</md-icon>
+    </button>
+      </div>
+    </div>
+  </md-card-title>
+  <md-card-content>
+    <div class="row">
+      <div class="col-3" *ngFor="let char of characters">
+        <div class="card">
+          <div class="portrait">
+            <img class="card-img-top" src="{{char.image_url}}" alt="Card image cap">
+          </div>
+          
+          <div class="card-block">
+            <div class="row">
+              <div class='col'>
+                <h4 class="card-title">{{char.name}}</h4>
+              </div>
+              <div class="col">
+                <md-chip-list *ngIf="char.game_system"><md-chip>{{char.game_system}}</md-chip></md-chip-list>
+                
+              </div>
+            </div>
+
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <button class="btn btn-primary" (click)="openSheet(char)">Open Sheet</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <md-card *ngFor="let char of characters">
+      <md-card-title>{{char.name}}</md-card-title>
+      <md-card-content></md-card-content>
+    </md-card>
+  </md-card-content>
+</md-card>

@@ -1,3 +1,64 @@
-<h1>
-  {{title}}
-</h1>
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">TT Games</a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerlink="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="games">Games</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="character">Characters</a>
+        </li>
+      </ul>
+      <div *ngIf="user.auth">
+        <span>{{user.auth.displayName}}</span>
+      </div>
+      
+      <button md-raised-button color="primary" (click)="login()" *ngIf="!user.auth">LOGIN</button>
+      <button md-raised-button color="warn" (click)="logout()" *ngIf="user.auth">LOGOUT</button>
+      <md-menu #appMenu="mdMenu">
+        <button md-menu-item> Settings </button>
+        <button md-menu-item> Help </button>
+      </md-menu>
+      <button md-icon-button [mdMenuTriggerFor]="appMenu">
+      <md-icon>more_vert</md-icon>
+    </button>
+    </div>
+</nav>
+
+
+
+<md-sidenav-container>
+  <md-sidenav mode="side" opened="true">
+    <md-nav-list>
+      <a md-list-item routerlink="" *ngFor="let link of links"> {{ link }} </a>
+    </md-nav-list>
+
+    <md-nav-list>
+      <h3 md-subheader>Folders</h3>
+      <md-list-item *ngFor="let folder of folders">
+        <md-icon md-list-avatar>folder</md-icon>
+        <h4 md-line>{{folder.name}}</h4>
+        <p md-line class="demo-2"> {{folder.updated}} </p>
+      </md-list-item>
+      <md-divider></md-divider>
+      <h3 md-subheader>Notes</h3>
+      <md-list-item *ngFor="let note of notes">
+        <md-icon md-list-avatar>note</md-icon>
+        <h4 md-line>{{note.name}}</h4>
+        <p md-line class="demo-2"> {{note.updated}} </p>
+      </md-list-item>
+    </md-nav-list>
+
+  </md-sidenav>
+  <div class="container my-content">
+    <router-outlet></router-outlet>
+  </div>
+</md-sidenav-container>
