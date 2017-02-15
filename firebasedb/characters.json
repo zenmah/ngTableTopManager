@@ -1,97 +1,232 @@
-{
-  "characters": [
-    {
-      "campaign": "Cedar Ridge Highschool",
-      "fiction": {
-        "backstory": "Cathara is a rebellious, stubborn and edgy. She’s careful about how people see her, and hides her true self from a lot of people. You can’t be too careful about your reputation especially here in this community where all that matters is out of which womb you were pooped out of.  So Cathara makes sure that her reputation is what she wants it to be, exactly the opposite of what her father wants her to be. If you look in her eyes closely you can see her judging and calculating.  Cathara still lives with her father, the great “Jean-Claude Monet”. He is a bastard, a demanding, controlling and intoxicated womanizer. If it wasn’t for the fact that most days he leaves her to fend for herself, she might have left years ago. When Cathara was around 5 her mother disappeared or left, with the only thing a hazy memory of her smile and an old amulet..  Just before her Junior year at Cedar “Cheese” Ridge High School started she came across an old chest containing several old looking artifacts and a dusty tome, the Seraphica. Apparently the Tome is written in an old language. Curious she started to read one of the pages out loud, trying to see if there was some meaning to the texts. She felt the amulet growing warm and suddenly she fell into a deep sleep and dreamt that she was looking and feeling like she was someone else.   Cathara is also a bit of a chem-geek, together with her BFF Alice they cook up all kinds of cool experiments. Some of which may or may not have gone as expected.    As a new motivation her father signed her up for music class to improve her ‘lacking’ guitar skills. He even got her the best tutor in town <unknown character>. And he forces her to carry her new guitar ‘A Kitara’  with her at all times. "
-      },
+[
+  {
+    "campaign": "Cedar Ridge Highschool",
+    "fiction": {
+      "backstory": "Cathara is a rebellious, stubborn and edgy. She’s careful about how people see her, and hides her true self from a lot of people. You can’t be too careful about your reputation especially here in this community where all that matters is out of which womb you were pooped out of.  So Cathara makes sure that her reputation is what she wants it to be, exactly the opposite of what her father wants her to be. If you look in her eyes closely you can see her judging and calculating.  Cathara still lives with her father, the great “Jean-Claude Monet”. He is a bastard, a demanding, controlling and intoxicated womanizer. If it wasn’t for the fact that most days he leaves her to fend for herself, she might have left years ago. When Cathara was around 5 her mother disappeared or left, with the only thing a hazy memory of her smile and an old amulet..  Just before her Junior year at Cedar “Cheese” Ridge High School started she came across an old chest containing several old looking artifacts and a dusty tome, the Seraphica. Apparently the Tome is written in an old language. Curious she started to read one of the pages out loud, trying to see if there was some meaning to the texts. She felt the amulet growing warm and suddenly she fell into a deep sleep and dreamt that she was looking and feeling like she was someone else.   Cathara is also a bit of a chem-geek, together with her BFF Alice they cook up all kinds of cool experiments. Some of which may or may not have gone as expected.    As a new motivation her father signed her up for music class to improve her ‘lacking’ guitar skills. He even got her the best tutor in town <unknown character>. And he forces her to carry her new guitar ‘A Kitara’  with her at all times. ",
+      "look": []
+    },
+    "game_system": "Monsterhearts",
+    "mechanics": {
+      "stats": [
+        {
+          "name": "Hot",
+          "value": 0
+        },
+        {
+          "name": "Cold",
+          "value": 3
+        },
+        {
+          "name": "Volatile",
+          "value": 0
+        },
+        {
+          "name": "Dark",
+          "value": 2
+        }
+      ],
+      "conditions": [
+        {
+          "name": "Overconfident"
+        },
+        {
+          "name": "+2 Forward",
+          "type": "bonus",
+          "source": "Bubba in the Cave"
+        },
+        {
+          "name": "+2 Forward",
+          "type": "bonus",
+          "source": "Refused Seth"
+        },
+        {
+          "name": "+2 Forward",
+          "type": "bonus",
+          "source": "Seth’s Dominance of Chase"
+        }
+      ],
+      "harm": 1,
+      "experience": 0,
+      "moves": [
+        {
+          "name": "Sex Move",
+          "move": "After sex, you can take a sympathetic token from them. They know about it, and it’s cool.",
+          "type": "sex_move",
+          "class": "Witch"
+        },
+        {
+          "name": "Sympathetic Tokens",
+          "move": "You gain power from sympathetic tokens - items of personal significance that you take from others. Each sympathetic token counts as a String.",
+          "type": "playbook",
+          "class": "Witch"
+        },
+        {
+          "name": "Hex-Casting",
+          "move": "You can cast Hexes. Choose two that you know. To cast them, either expend a sympathetic token during a secret ritual, or meet the target’s gaze and chant at them in tongues. Then roll with dark.\n On a 10 up, the Hex works, and can easily be reversed. \n On a 7-9, it works but choose one:* The casting does you 1 harm;* The Hex has unexpected side effects;* Trigger your Darkest Self.",
+          "type": "playbook",
+          "class": "Witch"
+        },
+        {
+          "name": "Bide My Time",
+          "move": "If you’ve got a sympathetic token against someone, add 1 to all rolls to hold steady against their actions or to run away from them.",
+          "type": "playbook",
+          "class": "Witch"
+        },
+        {
+          "name": "The Clique",
+          "move": "You’re at the head of the toughest, coolest, most powerful clique around. They count as a gang. Choose one of the following strengths for your gang:",
+          "options": [
+            "They’re talented (Rock Band); Cathara promised to make them better then ever."
+          ],
+          "type": "playbook",
+          "class": "Queen",
+          "cast": [
+            "Nigel",
+            "Calypso",
+            "Vincent",
+            "Kaine"
+          ]
+        },
+        {
+          "name": "Streaming",
+          "move": "You have a telepathic connection with your gang members. You can always hear their emotions and fears. When you try to hear specific thoughts, gaze into the abyss about it and add 1 to your roll. Cathara will put a Mark of the Seraph on her clique to link them together."
+        }
+      ]
+    },
+    "name": "Cathara",
+    "image_url": "http://gdurl.com/z33h",
+    "images": [
+      "http://gdurl.com/ZjR1"
+    ]
+  },
+  {
+    "game_system": "Monsterhearts",
+    "campaign": "Paramount Highschool",
+    "playbook": "Werewolf",
+    "name": "\"Aqua\" Velvet Prince",
+    "image_url": "http://gdurl.com/CPmL",
+    "images": [],
+    "fiction": {
+      "backstory": "",
+      "look": [
+        "Unkempt",
+        "Preditory Eyes"
+      ],
+      "origin": "Ancestral Power"
+    },
+    "mechanics": {
+      "stats": [
+        {
+          "name": "Hot",
+          "value": 1
+        },
+        {
+          "name": "Cold",
+          "value": 0
+        },
+        {
+          "name": "Volatile",
+          "value": 3
+        },
+        {
+          "name": "Dark",
+          "value": 0
+        }
+      ],
+      "conditions": [
+        {
+          "name": "Excited"
+        },
+        {
+          "name": "Unforgiving"
+        },
+        {
+          "name": "Elongated Canines"
+        }
+      ],
+      "harm": 0,
+      "experience": 1,
+      "moves": [
+        {
+          "name": "Sex Move",
+          "move": "When you have sex with someone, you establish a spirit connection with them. Until either of you breaks that spirit connection, by having sex with someone else, add 1 to all rolls made to defend them. You can tell when that connection has been broken.",
+          "type": "sex_move",
+          "class": "Werewolf"
+        },
+        {
+          "name": "Darkest Self",
+          "move": "You transform into a terrifying wolf-creature. You crave power and dominance, and those are earned through bloodshed. If anyone attempts to stand in your way, they must be brought down and made to bleed. You escape your Darkest Self when you wound someone you really care about or the sun rises, whichever happens first.",
+          "type": "darkest_self",
+          "class": "Werewolf"
+        }
+      ]
+    }
+  },
+  {
       "game_system": "Monsterhearts",
+      "campaign": "Paramount Highschool",
+      "playbook":"The Queen",
+      "name": "Bethany Hwan",
+      "image_url":"http://gdurl.com/uRGZ",
+      "images":[],
+      "fiction": {
+        "backstory": "",
+        "look":["Stunning","Brooding Eyes"],
+        "origin":"Source of the infection"
+      },
       "mechanics": {
         "stats":[
-          { "name":"Hot","value":0 },
-          { "name":"Cold","value":3 },
-          { "name":"Volatile","value":0 },
-          { "name":"Dark","value":2 }
+          { "name":"Hot","value":3 },
+          { "name":"Cold","value":1 },
+          { "name":"Volatile","value":-1 },
+          { "name":"Dark","value":-1 }
         ],
         "conditions":[
-          {"name":"Overconfident"},
-          {"name":"+2 Forward","type":"bonus", "source":"Bubba in the Cave"},
-          {"name":"+2 Forward","type":"bonus", "source":"Refused Seth"},
-          {"name":"+2 Forward","type":"bonus", "source":"Seth’s Dominance of Chase"}
+          {"name":"Busybody"},
+          {"name":"Unforgiving"},
+          {"name":"Elongated Canines"}
         ],
-        "harm":1,
-        "experience":0,
+        "harm":0,
+        "experience":1
+        ,
         "moves": [
           {
             "name": "Sex Move",
-            "move": "After sex, you can take a sympathetic token from them. They know about it, and it’s cool.",
+            "move": "When you have sex with someone, they gain the Condition one of them. While the Condition remains, they count as part of your gang.",
             "type": "sex_move",
-            "class": "Witch"
+            "class": "The Queen"
           },
           {
-            "name": "Sympathetic Tokens",
-            "move": "You gain power from sympathetic tokens - items of personal significance that you take from others. Each sympathetic token counts as a String.",
-            "type": "playbook",
-            "class": "Witch"
-          },
-          {
-            "name": "Hex-Casting",
-            "move": "You can cast Hexes. Choose two that you know. To cast them, either expend a sympathetic token during a secret ritual, or meet the target’s gaze and chant at them in tongues. Then roll with dark. On a 10 up, the Hex works, and can easily be reversed. On a 7-9, it works but choose one:* The casting does you 1 harm;* The Hex has unexpected side effects;* Trigger your Darkest Self.",
-            "type": "playbook",
-            "class": "Witch"
-          },
-          {
-            "name": "Bide My Time",
-            "move": "If you’ve got a sympathetic token against someone, add 1 to all rolls to hold steady against their actions or to run away from them.",
-            "type": "playbook",
-            "class": "Witch"
-          },
-          {
-            "name": "The Clique",
-            "move": "You’re at the head of the toughest, coolest, most powerful clique around. They count as a gang. Choose one of the following strengths for your gang:",
-            "options": [
-              "They’re talented (Rock Band); Cathara promised to make them better then ever."
-            ],
-            "type": "playbook",
-            "class": "Queen",
-            "cast": [
-              "Nigel",
-              "Calypso",
-              "Vincent",
-              "Kaine"
-            ]
-          },
-          {
-            "name": "Streaming",
-            "move": "You have a telepathic connection with your gang members. You can always hear their emotions and fears. When you try to hear specific thoughts, gaze into the abyss about it and add 1 to your roll. Cathara will put a Mark of the Seraph on her clique to link them together."
+            "name": "Darkest Self",
+            "move": "They’ve failed you. This is all their fault, and there’s no reason why you should have to suffer the consequences of their idiocy. You need to make an example out of each of them, a cruel and unwavering example. You escape your Darkest Self when you relinquish part of your power over to someone more deserving, or when you destroy an innocent person in order to prove your might.",
+            "type": "darkest_self",
+            "class": "The Queen"
           }
         ]
-      },
-      "name": "Cathara"
+      }
     },
-    {
-      "game_system": "Dungeons and Dragons",
-      "name": "Zenmah"
-    },
-    {
-      "game_system": "D&D 3.5E",
-      "name": "Ayanu"
-    },
-    {
-      "game_system": "Dragon Age RPG",
-      "name": "Z"
-    },
-    {
-      "game_system": "Edge of the Empite",
-      "name": "Dahri"
-    },
-    {
-      "game_system": "The One Ring",
-      "name": "Luna"
-    },
-    {
-      "game_system": "The One Ring",
-      "name": "Kaylon"
-    }
-  ]
-}
+  {
+    "game_system": "Dungeons and Dragons",
+    "name": "Zenmah"
+  },
+  {
+    "game_system": "D&D 3.5E",
+    "name": "Ayanu"
+  },
+  {
+    "game_system": "Dragon Age RPG",
+    "name": "Z"
+  },
+  {
+    "game_system": "Edge of the Empite",
+    "name": "Dahri"
+  },
+  {
+    "game_system": "The One Ring",
+    "name": "Luna"
+  },
+  {
+    "game_system": "The One Ring",
+    "name": "Kaylon"
+  }
+]

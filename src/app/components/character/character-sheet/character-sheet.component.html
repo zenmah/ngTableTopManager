@@ -1,11 +1,88 @@
+<md-card *ngIf="character">
+  <md-card-title>
+    <div class="row">
+      <div class="col-1">
+        <img src="{{character.image_url}}" class="rounded-circle char_thumb">
+      </div>
+      <div class="col-11">
+        <div class="row">
+          <div class="col-8">
+            <h1>{{character.name}}</h1> <small>{{character.playbook}}</small>
+          </div>
+          <div class="col-3">
+            <md-chip-list>
+              <md-chip color="accent">{{character.game_system}}</md-chip>
+              <md-chip color="primary">{{character.campaign}}</md-chip>
+            </md-chip-list>
+          </div>
+          <div class="col-1">
+            <button md-fab color="primary"> <md-icon>mode_edit</md-icon> </button>
+          </div>
+        </div>
 
-<div class='sheet-maindiv' *ngIf="character" >
-  <label class="sheet-name">Name: {{character.name}}</label>
-  <input type="text" name="attr_name" />
+      </div>
 
-  <input type='checkbox' name='attr_lock_class' class='sheet-lock'>
-  <label class="sheet-name">Playbook: {{character.playbook}}</label>
-  <input type='checkbox' name='attr_lock_class' class='sheet-lock' style="display: none;">
-  
-</div>
+    </div>
 
+
+  </md-card-title>
+  <md-card-content>
+    <md-tab-group>
+      <md-tab>
+        <template md-tab-label>
+          Mechanics
+        </template>
+        <br>
+        <div class="container">
+          <div class="row">
+            <div class="col-4">
+              <h2>Stats</h2>
+              <md-grid-list cols="2" rowHeight="100px">
+                <md-grid-tile *ngFor="let stat of character.mechanics.stats">
+                  <strong>{{stat.name}}:</strong> {{stat.value}}
+                </md-grid-tile>
+              </md-grid-list>
+            </div>
+            <div class="col-8">
+              <h2>Moves</h2>
+              <div class="card" *ngFor="let move of character.mechanics.moves">
+                <div class="card-block">
+                  <h3 class="card-title">{{move.name}}</h3>
+                  <p class="card-text">{{move.move}}</p>
+                </div>
+              </div>
+              <!--<md-list>
+                <md-list-item *ngFor="let move of character.mechanics.moves">
+                   <h3 md-line>{{move.name}}</h3>
+                  <p md-line>{{move.move}}</p>
+                </md-list-item>
+              </md-list>-->
+            </div>
+          </div>
+        </div>
+      </md-tab>
+      <md-tab>
+        <template md-tab-label>
+          Fiction
+        </template>
+        <br>
+        <div class="container">
+          <div class="row">
+            <div class="col-4">
+              <h2>Look</h2>
+              <md-list dense>
+                <md-list-item *ngFor="let look of character.fiction.look">
+                  <p>{{look.look}}</p>
+                </md-list-item>
+              </md-list>
+            </div>
+            <div class="col-8">
+              <h2>Backstory</h2>
+              <p>{{character.fiction.backstory}}</p>
+            </div>
+          </div>
+        </div>
+      </md-tab>
+    </md-tab-group>
+  </md-card-content>
+</md-card>
