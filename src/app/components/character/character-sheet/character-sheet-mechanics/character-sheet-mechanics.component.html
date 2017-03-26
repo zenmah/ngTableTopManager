@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <h2>Stats</h2>
+      <app-stat-grid [stats]="character.mechanics.stats"></app-stat-grid>
+    </div>
+    <div class="col-8">
+      <h2>Moves</h2>
+      <app-character-sheet-move *ngFor="let move of character.mechanics.moves" [move]="move"></app-character-sheet-move>
+    </div>
+  </div>
+</div>

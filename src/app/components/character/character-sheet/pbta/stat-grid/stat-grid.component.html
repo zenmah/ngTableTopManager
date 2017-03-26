@@ -1,0 +1,6 @@
+
+<ul class="list-group">
+  <li class="list-group-item" [ngClass]="{'list-group-item-success': stat.highlighted}"  *ngFor="let stat of stats" >
+    <app-individual-stat [stat]="stat" class="justify-content-between"></app-individual-stat>
+  </li>
+</ul>

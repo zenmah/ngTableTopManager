@@ -1,0 +1,15 @@
+  <!--[ngClass]="{'my-class': isClassVisible }"-->
+<div class="d-flex flex-row">
+
+      <md-checkbox [checked]="stat.highlighted" [disableRipple]="false" (change)="highlight()" class="p-1"></md-checkbox>
+  
+      <span class="p-2">{{stat.name}}</span>
+  
+  
+    <span class="p-2">{{stat.value}}</span>
+      <div class="btn-group btn-group-sm p-2" role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-secondary" (click)="lowerStat()"><md-icon>remove</md-icon></button>
+      <button type="button" class="btn btn-secondary" (click)="increaseStat()"><md-icon>add</md-icon></button>
+    </div>
+  
+</div>

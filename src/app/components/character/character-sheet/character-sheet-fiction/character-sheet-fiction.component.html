@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <h2>Look</h2>
+      <md-list dense>
+        <md-list-item *ngFor="let look of character.fiction.look">
+          <p>{{look.look}}</p>
+        </md-list-item>
+      </md-list>
+    </div>
+    <div class="col-8">
+      <h2>Backstory</h2>
+      <markdown>
+        {{character.fiction.backstory}}
+      </markdown>
+    </div>
+  </div>
+</div>

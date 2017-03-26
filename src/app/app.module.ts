@@ -22,6 +22,13 @@ import {CharacterService } from './firebase/character.service';
 import { AuthService } from './firebase/auth.service';
 import { CharacterListComponent } from './components/character/list-character/list-character.component';
 import { CharacterSheetComponent } from './components/character/character-sheet/character-sheet.component';
+import { EditCharacterSheetComponent } from './components/character/character-sheet/edit-character-sheet/edit-character-sheet.component';
+import { CharacterSheetHeaderComponent } from './components/character/character-sheet/character-sheet-header/character-sheet-header.component';
+import { CharacterSheetFictionComponent } from './components/character/character-sheet/character-sheet-fiction/character-sheet-fiction.component';
+import { CharacterSheetMechanicsComponent } from './components/character/character-sheet/character-sheet-mechanics/character-sheet-mechanics.component';
+import { MoveComponent } from './components/character/character-sheet/pbt-a/move/move.component';
+import { IndividualStatComponent } from './components/character/character-sheet/pbta/individual-stat/individual-stat.component';
+import { StatGridComponent } from './components/character/character-sheet/pbta/stat-grid/stat-grid.component';
 
 
 
@@ -34,7 +41,14 @@ import { CharacterSheetComponent } from './components/character/character-sheet/
     GamesComponent,
     DashboardComponent,
     CharacterListComponent,
-    CharacterSheetComponent
+    CharacterSheetComponent,
+    EditCharacterSheetComponent,
+    CharacterSheetHeaderComponent,
+    CharacterSheetFictionComponent,
+    CharacterSheetMechanicsComponent,
+    MoveComponent,
+    IndividualStatComponent,
+    StatGridComponent
   ],
   imports: [
     BrowserModule,
