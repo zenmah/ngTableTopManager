@@ -1,23 +1,20 @@
-<md-card *ngIf="character">
-  <md-card-title>
-    <app-character-sheet-header [character]="character"></app-character-sheet-header>
-  </md-card-title>
-  <md-card-content>
-    <md-tab-group>
-      <md-tab>
-        <template md-tab-label>
-          Mechanics
-        </template>
-        <br>
-                <app-character-sheet-mechanics [character]="character"></app-character-sheet-mechanics>
-      </md-tab>
-      <md-tab>
-        <template md-tab-label>
-          Fiction
-        </template>
-        <br>
-        <app-character-sheet-fiction [character]="character"></app-character-sheet-fiction>
-      </md-tab>
-    </md-tab-group>
-  </md-card-content>
-</md-card>
+<div>
+   Name: {{ (character | async)?.name }}
+  </div>
+ 
+<mat-card >
+  <mat-card-title>
+    <app-character-sheet-header [character]="(character | async)"></app-character-sheet-header>
+  </mat-card-title>
+  <mat-card-content>
+    <mat-tab-group>
+       <mat-tab label="Mechanics">
+                <app-character-sheet-mechanics [character]="(character | async)"></app-character-sheet-mechanics>
+      </mat-tab>
+       <mat-tab label="Fiction">
+        <app-character-sheet-fiction [character]="(character | async)"></app-character-sheet-fiction>
+      </mat-tab> 
+    </mat-tab-group>
+  </mat-card-content>
+
+</mat-card>

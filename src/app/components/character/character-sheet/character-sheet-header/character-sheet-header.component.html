@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" *ngIf="character">
   <div class="col-1">
     <img src="{{character.image_url}}" class="rounded-circle char_thumb">
   </div>
@@ -9,13 +9,13 @@
         <p>{{character.concept}}</p>
       </div>
       <div class="col-3">
-        <md-chip-list>
-          <md-chip color="accent">{{character.game_system}}</md-chip>
-          <md-chip color="primary">{{character.campaign}}</md-chip>
-        </md-chip-list>
+        <mat-chip-list>
+          <mat-chip color="accent">{{character.game_system}}</mat-chip>
+          <mat-chip color="primary">{{character.campaign}}</mat-chip>
+        </mat-chip-list>
       </div>
       <div class="col-1">
-        <button md-fab color="primary"> <md-icon>mode_edit</md-icon> </button>
+        <button mat-fab color="primary"> <mat-icon>mode_edit</mat-icon> </button>
       </div>
     </div>
 

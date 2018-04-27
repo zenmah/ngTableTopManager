@@ -4,21 +4,32 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { MaterialModule } from '@angular/material';
+import { MatButtonModule,MatCardModule,
+  MatToolbarModule,
+  MatListModule,
+  MatTabsModule,
+  MatInputModule,
+  MatSelectModule,
+  MatGridListModule,
+  MatSidenavModule,
+  MatIconModule,
+  MatChipsModule, MatMenuModule, MatCheckboxModule } from '@angular/material';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { MarkdownModule } from 'angular2-markdown';
 
-import {AngularFireModule} from 'angularfire2';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from 'angularfire2/storage';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AppComponent } from './app.component';
 import {routes} from './app.routes';
-import fireconfig from './config/firebase.config';
+import * as environment from './config/firebase.config';
 
-import { CharacterComponent } from './components/character/character.component';
 import { GamesComponent } from './components/games/games.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
-import {CharacterService } from './firebase/character.service';
+//import {CharacterService } from './firebase/character.service';
 import { AuthService } from './firebase/auth.service';
 import { CharacterListComponent } from './components/character/list-character/list-character.component';
 import { CharacterSheetComponent } from './components/character/character-sheet/character-sheet.component';
@@ -29,15 +40,28 @@ import { CharacterSheetMechanicsComponent } from './components/character/charact
 import { MoveComponent } from './components/character/character-sheet/pbt-a/move/move.component';
 import { IndividualStatComponent } from './components/character/character-sheet/pbta/individual-stat/individual-stat.component';
 import { StatGridComponent } from './components/character/character-sheet/pbta/stat-grid/stat-grid.component';
+import { CharacterService } from './components/character/shared/character.service';
 
-
+const MATERIAL_COMPONENTS = [
+  MatButtonModule,
+  MatCardModule,
+  MatToolbarModule,
+  MatListModule,
+  MatTabsModule,
+  MatInputModule,
+  MatSelectModule,
+  MatGridListModule,
+  MatSidenavModule,
+  MatIconModule,
+  MatChipsModule,MatMenuModule, MatCheckboxModule
+];
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CharacterComponent,
+    
     GamesComponent,
     DashboardComponent,
     CharacterListComponent,
@@ -57,11 +81,15 @@ import { StatGridComponent } from './components/character/character-sheet/pbta/s
     MarkdownModule,
     BrowserAnimationsModule,
     NgbModule.forRoot(),
-    AngularFireModule.initializeApp(fireconfig),
-    MaterialModule.forRoot(),
+    AngularFireModule.initializeApp(environment.firebaseConfig, 'ngTableTopManager'), // imports firebase/app needed for everything
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
+    AngularFireStorageModule, // imports firebase/storage only needed for storage features
+    
+    ...MATERIAL_COMPONENTS,
     RouterModule.forRoot(routes)
   ],
-  providers: [AuthService, CharacterService],
+  providers: [CharacterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

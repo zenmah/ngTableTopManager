@@ -1,19 +1,19 @@
-<md-card>
-  <md-card-title>
+<mat-card>
+  <mat-card-title>
     <div class="row">
       <div class="col-10">
         <h1>Characters</h1>
       </div>
       <div class="col-2">
-        <button md-fab color="primary">
-      <md-icon>add</md-icon>
+        <button mat-fab color="primary">
+      <mat-icon>add</mat-icon>
     </button>
       </div>
     </div>
-  </md-card-title>
-  <md-card-content>
+  </mat-card-title>
+  <mat-card-content>
     <div class="row">
-      <div class="col-3" *ngFor="let char of characters">
+      <div class="col-3" *ngFor="let char of characters | async">
         <div class="card">
           <div class="portrait">
             <img class="card-img-top rounded img-portrait" src="{{char.image_url}}" alt="Card image cap">
@@ -25,7 +25,7 @@
                 <h4 class="card-title">{{char.name}}</h4>
               </div>
               <div class="col">
-                <md-chip-list *ngIf="char.game_system"><md-chip>{{char.game_system}}</md-chip></md-chip-list>
+                <mat-chip-list *ngIf="char.game_system"><mat-chip>{{char.game_system}}</mat-chip></mat-chip-list>
                 
               </div>
             </div>
@@ -37,9 +37,9 @@
       </div>
 
     </div>
-    <md-card *ngFor="let char of characters">
-      <md-card-title>{{char.name}}</md-card-title>
-      <md-card-content></md-card-content>
-    </md-card>
-  </md-card-content>
-</md-card>
+    <mat-card *ngFor="let char of characters | async">
+      <mat-card-title>{{char.name}}</mat-card-title>
+      <mat-card-content></mat-card-content>
+    </mat-card>
+  </mat-card-content>
+</mat-card>

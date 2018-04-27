@@ -1,13 +1,15 @@
 import { AuthService } from './firebase/auth.service';
 import { Component, OnInit } from '@angular/core';
-import {AngularFire} from 'angularfire2';
+import { AngularFireAuth } from 'angularfire2/auth';
+import * as firebase from 'firebase/app';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-  title = 'app works!';
+export class AppComponent {
+  applicationName = 'Table Top Manager';
   links: string[] = ['Link1', 'Link2'];
   folders: any = [{
     name: 'Folder1',
@@ -26,27 +28,14 @@ export class AppComponent implements OnInit {
     updated: '3 hours ago'
   }];
 
+  constructor(public afAuth: AngularFireAuth) {
+  }
   user: any = {};
 
-  constructor(private authService: AuthService){
-
+  login() {
+    this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
   }
-
-  ngOnInit()  {
-    this.authService.user.subscribe(authState => {
-      if (authState) {
-        console.log('Logged In!');
-        this.user = authState;
-      }
-    });
-  }
-
-
-  login(){
-    this.authService.login();
-  }
-
-  logout(){
-    this.authService.logout();
+  logout() {
+    this.afAuth.auth.signOut();
   }
 }

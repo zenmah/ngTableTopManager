@@ -1,4 +1,4 @@
-<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+<!-- <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -17,48 +17,67 @@
           <a class="nav-link" routerLink="character">Characters</a>
         </li>
       </ul>
-      <div *ngIf="user.auth">
-        <span>{{user.auth.displayName}}</span>
-      </div>
-      
-      <button md-raised-button color="primary" (click)="login()" *ngIf="!user.auth">LOGIN</button>
-      <button md-raised-button color="warn" (click)="logout()" *ngIf="user.auth">LOGOUT</button>
-      <md-menu #appMenu="mdMenu">
-        <button md-menu-item> Settings </button>
-        <button md-menu-item> Help </button>
-      </md-menu>
-      <button md-icon-button [mdMenuTriggerFor]="appMenu">
-      <md-icon>more_vert</md-icon>
-    </button>
+ 
+
+
+
+
     </div>
-</nav>
+</nav> -->
+
+<mat-toolbar>  
+  <mat-toolbar-row>
+      <a mat-button routerLink="#"> {{applicationName}} </a>
+      <a mat-button routerLink="games"> Games </a>
+      <a mat-button routerLink="characters"> Characters </a>
+      <!-- This fills the remaining space of the current row -->
+      <span class="example-fill-remaining-space"></span>
+    <div *ngIf="afAuth.authState | async as user; else showLogin">
+      <span>Hello {{ user.displayName }}!</span>
+      <button mat-raised-button color="warn" (click)="logout()">LOGOUT</button>
+    </div>
+    <ng-template #showLogin>
+      <button  mat-raised-button color="primary" (click)="login()">LOGIN</button>
+    </ng-template>
+    <mat-menu #appMenu="matMenu">
+        <button mat-menu-item> Settings </button>
+        <button mat-menu-item> Help </button>
+        
+      </mat-menu>
+      <button mat-icon-button [matMenuTriggerFor]="appMenu">
+      <mat-icon>more_vert</mat-icon>
+      </button>
+  </mat-toolbar-row>
+</mat-toolbar>
 
 
 
-<md-sidenav-container>
-  <md-sidenav mode="side" opened="true">
-    <md-nav-list>
-      <a md-list-item routerlink="" *ngFor="let link of links"> {{ link }} </a>
-    </md-nav-list>
 
-    <md-nav-list>
-      <h3 md-subheader>Folders</h3>
-      <md-list-item *ngFor="let folder of folders">
-        <md-icon md-list-avatar>folder</md-icon>
-        <h4 md-line>{{folder.name}}</h4>
-        <p md-line class="demo-2"> {{folder.updated}} </p>
-      </md-list-item>
-      <md-divider></md-divider>
-      <h3 md-subheader>Notes</h3>
-      <md-list-item *ngFor="let note of notes">
-        <md-icon md-list-avatar>note</md-icon>
-        <h4 md-line>{{note.name}}</h4>
-        <p md-line class="demo-2"> {{note.updated}} </p>
-      </md-list-item>
-    </md-nav-list>
 
-  </md-sidenav>
+<mat-sidenav-container>
+  <mat-sidenav mode="side" opened="false">
+    <mat-nav-list>
+      <a mat-list-item routerlink="" *ngFor="let link of links"> {{ link }} </a>
+    </mat-nav-list>
+
+    <mat-nav-list>
+      <h3 mat-subheader>Folders</h3>
+      <mat-list-item *ngFor="let folder of folders">
+        <mat-icon mat-list-avatar>folder</mat-icon>
+        <h4 mat-line>{{folder.name}}</h4>
+        <p mat-line class="demo-2"> {{folder.updated}} </p>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <h3 mat-subheader>Notes</h3>
+      <mat-list-item *ngFor="let note of notes">
+        <mat-icon mat-list-avatar>note</mat-icon>
+        <h4 mat-line>{{note.name}}</h4>
+        <p mat-line class="demo-2"> {{note.updated}} </p>
+      </mat-list-item>
+    </mat-nav-list>
+
+  </mat-sidenav>
   <div class="container my-content">
     <router-outlet></router-outlet>
   </div>
-</md-sidenav-container>
+</mat-sidenav-container>
