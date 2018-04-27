@@ -1,0 +1,12 @@
+<!--[ngClass]="{'my-class': isClassVisible }"-->
+<div (click)="highlight()">
+  <section class="example-section">
+    <h2 class="example-h2">
+    <span class="p-2">{{stat.name}}</span>
+    <span class="p-2">{{stat.value}}</span>
+  </h2>
+  </section>
+  <section class="example-section">
+    <mat-slider min="-3" max="3" step="1" value="1.5" thumblabel="true" [(ngModel)]="stat.value"></mat-slider>
+  </section>
+</div>

@@ -13,7 +13,7 @@ import { MatButtonModule,MatCardModule,
   MatGridListModule,
   MatSidenavModule,
   MatIconModule,
-  MatChipsModule, MatMenuModule, MatCheckboxModule } from '@angular/material';
+  MatChipsModule, MatMenuModule, MatCheckboxModule, MatSlider, MatSliderModule } from '@angular/material';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { MarkdownModule } from 'angular2-markdown';
 
@@ -32,47 +32,18 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 //import {CharacterService } from './firebase/character.service';
 import { AuthService } from './firebase/auth.service';
 import { CharacterListComponent } from './components/character/list-character/list-character.component';
-import { CharacterSheetComponent } from './components/character/character-sheet/character-sheet.component';
-import { EditCharacterSheetComponent } from './components/character/character-sheet/edit-character-sheet/edit-character-sheet.component';
-import { CharacterSheetHeaderComponent } from './components/character/character-sheet/character-sheet-header/character-sheet-header.component';
-import { CharacterSheetFictionComponent } from './components/character/character-sheet/character-sheet-fiction/character-sheet-fiction.component';
-import { CharacterSheetMechanicsComponent } from './components/character/character-sheet/character-sheet-mechanics/character-sheet-mechanics.component';
-import { MoveComponent } from './components/character/character-sheet/pbt-a/move/move.component';
-import { IndividualStatComponent } from './components/character/character-sheet/pbta/individual-stat/individual-stat.component';
-import { StatGridComponent } from './components/character/character-sheet/pbta/stat-grid/stat-grid.component';
-import { CharacterService } from './components/character/shared/character.service';
-
-const MATERIAL_COMPONENTS = [
-  MatButtonModule,
-  MatCardModule,
-  MatToolbarModule,
-  MatListModule,
-  MatTabsModule,
-  MatInputModule,
-  MatSelectModule,
-  MatGridListModule,
-  MatSidenavModule,
-  MatIconModule,
-  MatChipsModule,MatMenuModule, MatCheckboxModule
-];
+import { CharacterService } from './components/character/shared/character.service'
+import { MaterialModule } from './components/shared/material.module';
+import { CharacterSheetModule } from './components/character/character-sheet/shared/character-sheet.module';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    
     GamesComponent,
     DashboardComponent,
     CharacterListComponent,
-    CharacterSheetComponent,
-    EditCharacterSheetComponent,
-    CharacterSheetHeaderComponent,
-    CharacterSheetFictionComponent,
-    CharacterSheetMechanicsComponent,
-    MoveComponent,
-    IndividualStatComponent,
-    StatGridComponent
   ],
   imports: [
     BrowserModule,
@@ -81,12 +52,12 @@ const MATERIAL_COMPONENTS = [
     MarkdownModule,
     BrowserAnimationsModule,
     NgbModule.forRoot(),
-    AngularFireModule.initializeApp(environment.firebaseConfig, 'ngTableTopManager'), // imports firebase/app needed for everything
+    AngularFireModule.initializeApp(environment.firebaseConfig), // imports firebase/app needed for everything
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule, // imports firebase/storage only needed for storage features
-    
-    ...MATERIAL_COMPONENTS,
+    MaterialModule,
+    CharacterSheetModule,
     RouterModule.forRoot(routes)
   ],
   providers: [CharacterService],
