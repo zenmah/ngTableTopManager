@@ -19,22 +19,23 @@ import { MarkdownModule } from 'angular2-markdown';
 
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
-import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AppComponent } from './app.component';
 import {routes} from './app.routes';
 import * as environment from './config/firebase.config';
 
-import { GamesComponent } from './components/games/games.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { GamesComponent } from './games/games.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
-//import {CharacterService } from './firebase/character.service';
-import { AuthService } from './firebase/auth.service';
-import { CharacterListComponent } from './components/character/list-character/list-character.component';
-import { CharacterService } from './components/character/shared/character.service'
-import { MaterialModule } from './components/shared/material.module';
-import { CharacterSheetModule } from './components/character/character-sheet/shared/character-sheet.module';
+import { CharacterListComponent } from './character/list-character/list-character.component';
+import { CharacterService } from './character/shared/character.service'
+import { MaterialModule } from './shared/material.module';
+import { CharacterSheetModule } from './character/character-sheet/shared/character-sheet.module';
+import { CoreModule } from './core/core.module';
+import { ToolbarComponent } from './ui/toolbar/toolbar.component';
+import { AppRoutingModule } from './app-routing.module';
+import { UiModule } from './ui/ui.module';
 
 
 
@@ -44,6 +45,7 @@ import { CharacterSheetModule } from './components/character/character-sheet/sha
     GamesComponent,
     DashboardComponent,
     CharacterListComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -55,10 +57,11 @@ import { CharacterSheetModule } from './components/character/character-sheet/sha
     AngularFireModule.initializeApp(environment.firebaseConfig), // imports firebase/app needed for everything
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
-    AngularFireStorageModule, // imports firebase/storage only needed for storage features
     MaterialModule,
+    AppRoutingModule,
+    CoreModule,
+    UiModule,
     CharacterSheetModule,
-    RouterModule.forRoot(routes)
   ],
   providers: [CharacterService],
   bootstrap: [AppComponent]

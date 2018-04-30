@@ -1,0 +1,23 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <a mat-button routerLink="#"> {{applicationName}} </a>
+    <a mat-button routerLink="games"> Games </a>
+    <a mat-button routerLink="characters"> Characters </a>
+    <!-- This fills the remaining space of the current row -->
+    <span class="example-fill-remaining-space"></span>
+    <!-- <div *ngIf="(auth.user | async); else showLogin">
+        <span>Hello {{ auth.user.displayName }}!</span>
+        <button mat-raised-button color="warn" (click)="logout()">LOGOUT</button>
+      </div>
+      <ng-template #showLogin>
+        <button mat-raised-button color="primary" (click)="login()">LOGIN</button>
+      </ng-template> -->
+    <mat-menu #appMenu="matMenu">
+      <button mat-menu-item> Settings </button>
+      <button mat-menu-item> Help </button>
+    </mat-menu>
+    <button mat-icon-button [matMenuTriggerFor]="appMenu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
