@@ -6,8 +6,8 @@
       </div>
       <div class="col-2">
         <button mat-fab color="primary">
-      <mat-icon>add</mat-icon>
-    </button>
+          <mat-icon>add</mat-icon>
+        </button>
       </div>
     </div>
   </mat-card-title>
@@ -18,28 +18,24 @@
           <div class="portrait">
             <img class="card-img-top rounded img-portrait" src="{{char.image_url}}" alt="Card image cap">
           </div>
-          
+
           <div class="card-block">
             <div class="row">
               <div class='col'>
                 <h4 class="card-title">{{char.name}}</h4>
               </div>
               <div class="col">
-                <mat-chip-list *ngIf="char.game_system"><mat-chip>{{char.game_system}}</mat-chip></mat-chip-list>
-                
+                <mat-chip-list *ngIf="char.game_system">
+                  <mat-chip>{{char.game_system}}</mat-chip>
+                </mat-chip-list>
               </div>
             </div>
-
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <button class="btn btn-primary" (click)="openSheet(char)">Open Sheet</button>
+            <p class="card-text">{{char.concept}}</p>
+            <button mat-button (click)="openSheet(char)">Open Sheet</button>
           </div>
         </div>
       </div>
 
     </div>
-    <mat-card *ngFor="let char of characters | async">
-      <mat-card-title>{{char.name}}</mat-card-title>
-      <mat-card-content></mat-card-content>
-    </mat-card>
   </mat-card-content>
 </mat-card>

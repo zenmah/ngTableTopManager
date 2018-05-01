@@ -20,7 +20,7 @@ interface User {
 export class AuthService {
 
   user: Observable<User | null>;
-
+  welcomeMsg: string = "Welcome to Table Top Manager";
   constructor(private afAuth: AngularFireAuth,
               private afs: AngularFirestore,
               private router: Router,
@@ -60,7 +60,7 @@ export class AuthService {
   private oAuthLogin(provider: firebase.auth.AuthProvider) {
     return this.afAuth.auth.signInWithPopup(provider)
       .then((credential) => {
-        this.notify.update('Welcome to Firestarter!!!', 'success');
+        this.notify.update(this.welcomeMsg, 'success');
         return this.updateUserData(credential.user);
       })
       .catch((error) => this.handleError(error) );
@@ -70,7 +70,7 @@ export class AuthService {
   anonymousLogin() {
     return this.afAuth.auth.signInAnonymously()
       .then((user) => {
-        this.notify.update('Welcome to Firestarter!!!', 'success');
+        this.notify.update(this.welcomeMsg, 'success');
         return this.updateUserData(user); // if using firestore
       })
       .catch((error) => {
@@ -84,7 +84,7 @@ export class AuthService {
   emailSignUp(email: string, password: string) {
     return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
       .then((user) => {
-        this.notify.update('Welcome to Firestarter!!!', 'success');
+        this.notify.update(this.welcomeMsg, 'success');
         return this.updateUserData(user); // if using firestore
       })
       .catch((error) => this.handleError(error) );
@@ -93,7 +93,7 @@ export class AuthService {
   emailLogin(email: string, password: string) {
     return this.afAuth.auth.signInWithEmailAndPassword(email, password)
       .then((user) => {
-        this.notify.update('Welcome to Firestarter!!!', 'success')
+        this.notify.update(this.welcomeMsg, 'success')
         return this.updateUserData(user); // if using firestore
       })
       .catch((error) => this.handleError(error) );
